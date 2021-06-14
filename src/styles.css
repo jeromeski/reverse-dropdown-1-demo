@@ -1,0 +1,70 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.link-container {
+  width: 100px;
+  /* background-color: lightblue; */
+  text-align: center;
+  position: relative;
+}
+
+.link-container > a {
+  display: inline-block;
+  padding: .25rem 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.link-container > a > *:first-child {
+  margin-right: 0.5rem;
+}
+
+.main-link {
+  display: block;
+}
+
+.main-link:hover {
+  background-color: lightcoral
+} 
+
+.main-link:hover + div.sublink-container {
+  display: block;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  transition-delay: 0.5s;
+}
+
+.sublink-container {
+  display: none;
+  background-color: lightblue;
+}
+
+.sublink-container:hover {
+  display: block;
+}
+
+.sublink {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  
+  50% {
+    opacity: .75;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
